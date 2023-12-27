@@ -1,8 +1,5 @@
-# React + Vite
+วัตถุประสงค์:
+- เพื่อให้เข้าใจการแบ่ง component และการส่ง Props
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+โจทย์:
+- จากไฟล์ App.jsx จงแบ่ง component และ ส่ง Props ให้เว็บยังใช้งานได้ตามเดิม
