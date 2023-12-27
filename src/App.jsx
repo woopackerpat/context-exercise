@@ -12,7 +12,7 @@ import { TodoContext } from "./contexts/TodoContext";
 function App() {
   // Step 1 แปลง การส่ง Props ทั้งหมด ให้ไปอยู่ใน context
 
-  const { todos, todoText, setTodoText, addTodo, deleteTodo } =
+  const { todos, deleteTodo } =
     useContext(TodoContext);
 
   // Step 2 ไปที่ไฟล์ src/contexts/TodoContext.jsx
@@ -23,11 +23,7 @@ function App() {
     <>
       <Container>
         <Header />
-        <TodoAction
-          todoText={todoText}
-          addTodo={addTodo}
-          setTodoText={setTodoText}
-        />
+        <TodoAction />
         <TodoList>
           {todos.map((todo, index) => (
             <TodoItem

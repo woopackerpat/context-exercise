@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../../contexts/TodoContext";
 
-function TodoAction({ todoText, addTodo, setTodoText }) {
+function TodoAction() {
+  const { todoText, setTodoText, addTodo } = useContext(TodoContext);
   return (
     <div className="mb-4 flex">
       <input
