@@ -1,8 +1,8 @@
 วัตถุประสงค์:
-- เพื่อให้เข้าใจ การใช้งาน context
+- เพื่อให้เข้าใจการใช้ context
 
 โจทย์:
-- สร้าง context ขึ้นมาโดยเขียนอธิบายขั้นตอนต่างๆว่าทำเพื่ออะไร ตั้งแต่ createContext การติดตั้ง contextProvider และการใช้ useContext
+- ย้ายค่าต่างๆไปใน context โดยนำ props ที่ไม่จำเป็นออก และยังให้ใช้งานได้ตามเดิม
 
 เฉลย:
-- ดูเฉลยจาก branch context-init โดยพิมพ์ git checkout component-init
+- ดูเฉลยจาก branch context-usage โดยพิมพ์ git checkout component-usage
