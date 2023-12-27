@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -7,42 +7,38 @@ import TodoAction from "./assets/components/TodoAction";
 import TodoList from "./assets/components/TodoList";
 import TodoItem from "./assets/components/TodoItem";
 import Container from "./assets/components/Container";
-import TodoContextProvider from "./contexts/TodoContext";
+import { TodoContext } from "./contexts/TodoContext";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [todoText, setTodoText] = useState("");
+  // Step 1 แปลง การส่ง Props ทั้งหมด ให้ไปอยู่ใน context
 
-  const addTodo = () => {
-    if (todoText.trim() !== "") {
-      setTodos([...todos, todoText]);
-      setTodoText("");
-    }
-  };
+  const { todos, todoText, setTodoText, addTodo, deleteTodo } =
+    useContext(TodoContext);
 
-  const deleteTodo = (index) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  };
+  // Step 2 ไปที่ไฟล์ src/contexts/TodoContext.jsx
+
+  // Step 3 สังเกตุว่า เวลาเราจะใช้งาน Todo เมื่อไหร่ เราต้อง import TodoContext มาที่ไฟล์นั้นทุกครั้ง เรามีวิธีที่ง่ายกว่านั้น ลองคิดก่อนว่าทำยังไงให้ไม่ต้อง import ทุกครั้ง -> ดูเฉลย branch context-optimize
 
   return (
     <>
-      <TodoContextProvider>
-        <Container>
-          <Header />
-          <TodoAction
-            todoText={todoText}
-            addTodo={addTodo}
-            setTodoText={setTodoText}
-          />
-          <TodoList>
-            {todos.map((todo, index) => (
-              <TodoItem index={index} todo={todo} deleteTodo={deleteTodo} />
-            ))}
-          </TodoList>
-        </Container>
-      </TodoContextProvider>
+      <Container>
+        <Header />
+        <TodoAction
+          todoText={todoText}
+          addTodo={addTodo}
+          setTodoText={setTodoText}
+        />
+        <TodoList>
+          {todos.map((todo, index) => (
+            <TodoItem
+              key={index}
+              index={index}
+              todo={todo}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </TodoList>
+      </Container>
     </>
   );
 }
