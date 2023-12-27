@@ -1,9 +1,8 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 export const TodoContext = createContext(null);
 
 function TodoContextProvider({ children }) {
-  //Step 2 ย้ายค่า state และ function ทั้งหมด
   const [todos, setTodos] = useState([]);
   const [todoText, setTodoText] = useState("");
 
@@ -24,5 +23,13 @@ function TodoContextProvider({ children }) {
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 }
+
+export const useTodo = () => {
+  const context = useContext(TodoContext);
+  if (context === undefined) {
+    throw new Error("useTodo must be used within a TodoContextProvider");
+  }
+  return context;
+};
 
 export default TodoContextProvider;
