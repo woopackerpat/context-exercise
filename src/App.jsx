@@ -36,7 +36,12 @@ function App() {
         />
         <TodoList>
           {todos.map((todo, index) => (
-            <TodoItem index={index} todo={todo} deleteTodo={deleteTodo} />
+            <TodoItem
+              key={index}
+              index={index}
+              todo={todo}
+              deleteTodo={deleteTodo}
+            />
           ))}
         </TodoList>
       </Container>
