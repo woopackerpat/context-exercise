@@ -1,8 +1,8 @@
-# React + Vite
+วัตถุประสงค์:
+- เพื่อให้เข้าใจ การใช้งาน context
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+โจทย์:
+- สร้าง context ขึ้นมาโดยเขียนอธิบายขั้นตอนต่างๆว่าทำเพื่ออะไร ตั้งแต่ createContext การติดตั้ง contextProvider และการใช้ useContext
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+เฉลย:
+- ดูเฉลยจาก branch context-init โดยพิมพ์ git checkout component-init
