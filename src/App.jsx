@@ -2,6 +2,10 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Header from "./assets/components/Header";
+import TodoAction from "./assets/components/TodoAction";
+import TodoList from "./assets/components/TodoList";
+import TodoItem from "./assets/components/TodoItem";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -24,35 +28,17 @@ function App() {
     <>
       <div className="bg-gray-100 min-h-screen flex items-center justify-center">
         <div className="max-w-md bg-white rounded p-4 shadow">
-          <h1 className="text-2xl font-semibold mb-4">TODO List</h1>
-          <div className="mb-4 flex">
-            <input
-              type="text"
-              className="w-full border rounded px-3 py-2 mr-2"
-              placeholder="Enter a task"
-              value={todoText}
-              onChange={(e) => setTodoText(e.target.value)}
-            />
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-              onClick={addTodo}
-            >
-              Add
-            </button>
-          </div>
-          <ul className="list-disc pl-6">
+          <Header />
+          <TodoAction
+            todoText={todoText}
+            addTodo={addTodo}
+            setTodoText={setTodoText}
+          />
+          <TodoList>
             {todos.map((todo, index) => (
-              <li key={index} className="mb-2 flex justify-between">
-                <span className="text-black">{todo}</span>
-                <button
-                  className="text-red-500 ml-2"
-                  onClick={() => deleteTodo(index)}
-                >
-                  Delete
-                </button>
-              </li>
+              <TodoItem index={index} todo={todo} deleteTodo={deleteTodo} />
             ))}
-          </ul>
+          </TodoList>
         </div>
       </div>
     </>
