@@ -5,4 +5,4 @@
 - ย้ายค่าต่างๆไปใน context โดยนำ props ที่ไม่จำเป็นออก และยังให้ใช้งานได้ตามเดิม
 
 เฉลย:
-- ดูเฉลยจาก branch context-init โดยพิมพ์ git checkout component-usage
+- ดูเฉลยจาก branch context-optimize โดยพิมพ์ git checkout component-usage

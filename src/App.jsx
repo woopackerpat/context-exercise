@@ -12,8 +12,7 @@ import { TodoContext } from "./contexts/TodoContext";
 function App() {
   // Step 1 แปลง การส่ง Props ทั้งหมด ให้ไปอยู่ใน context
 
-  const { todos, deleteTodo } =
-    useContext(TodoContext);
+  const { todos } = useContext(TodoContext);
 
   // Step 2 ไปที่ไฟล์ src/contexts/TodoContext.jsx
 
@@ -26,15 +25,10 @@ function App() {
         <TodoAction />
         <TodoList>
           {todos.map((todo, index) => (
-            <TodoItem
-              key={index}
-              index={index}
-              todo={todo}
-              deleteTodo={deleteTodo}
-            />
+            <TodoItem key={index} index={index} todo={todo} />
           ))}
         </TodoList>
-      </Container>
+      </Container>s
     </>
   );
 }
