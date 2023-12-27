@@ -1,8 +1,8 @@
 วัตถุประสงค์:
-- เพื่อให้เข้าใจการใช้ context
+- เพื่อให้การใช้ context อ่านและใช้ง่าย
 
 โจทย์:
-- ย้ายค่าต่างๆไปใน context โดยนำ props ที่ไม่จำเป็นออก และยังให้ใช้งานได้ตามเดิม
+- ใช้ค่า จาก context ได้โดยไม่ต้อง import TodoContext ทุกๆหน้าที่จะใช้
 
 เฉลย:
-- ดูเฉลยจาก branch context-optimize โดยพิมพ์ git checkout component-usage
+- ดูเฉลยจาก branch context-optimize โดยพิมพ์ git checkout component-optimize
