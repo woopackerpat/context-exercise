@@ -1,6 +1,7 @@
 import React from "react";
 
-function TodoItem({ index, todo, deleteTodo }) {
+function TodoItem() {
+  const { deleteTodo } = useTodo();
   return (
     <li className="mb-2 flex justify-between">
       <span className="text-black">{todo}</span>

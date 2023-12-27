@@ -14,25 +14,16 @@ function App() {
 
   // Step 2 import useTodo มาใช้เรียกใช้ที่ไฟล์นี้
 
-  const { todos, todoText, setTodoText, addTodo, deleteTodo } = useTodo();
+  const { todos, deleteTodo } = useTodo();
 
   return (
     <>
       <Container>
         <Header />
-        <TodoAction
-          todoText={todoText}
-          addTodo={addTodo}
-          setTodoText={setTodoText}
-        />
+        <TodoAction />
         <TodoList>
           {todos.map((todo, index) => (
-            <TodoItem
-              key={index}
-              index={index}
-              todo={todo}
-              deleteTodo={deleteTodo}
-            />
+            <TodoItem key={index} index={index} todo={todo} />
           ))}
         </TodoList>
       </Container>
